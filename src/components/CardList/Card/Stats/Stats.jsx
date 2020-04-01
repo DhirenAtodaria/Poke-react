@@ -5,22 +5,16 @@ export default class Stats extends Component {
         switch(word) {
             case "hp":
                 return "HP"
-                break;
             case "attack":
                 return "Attack";
-                break;
             case "defense":
                 return "Defense";
-                break;
             case "sa":
                 return "Special Attack";
-                break;
             case "sd":
                 return "Special Defense";
-                break;
             case "speed":
                 return "Speed";
-                break;
             default:
                 return word;
         }
