@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Card.module.scss';
 import Stats from './Stats';
+import Tilt from 'react-parallax-tilt';
 
 export default class Card extends Component {
     styleChecker = () => {
@@ -29,13 +30,11 @@ export default class Card extends Component {
     }
 
     render() {
-        // this.styleChecker()
-        // console.log(this.props.pokeData.type)
         return (
-            <div>
+            <Tilt scale={1.15} transitionSpeed={1000}>
                 <figure className={`${styles.card} ${this.styleChecker()}`}>
                     <div className={styles.card__image_container}>
-                        <img src={this.props.pokeData.image} className={styles.card__image} />
+                        <img src={this.props.pokeData.image} alt="poke" className={styles.card__image} />
                     </div>
 
                     <figcaption className={styles.card__caption}>
@@ -59,7 +58,7 @@ export default class Card extends Component {
                         </div>
                     </figcaption>
                 </figure>
-            </div>
+            </Tilt>
         )
     }
 }
