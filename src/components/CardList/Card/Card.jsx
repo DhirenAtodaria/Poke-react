@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
 import styles from './Card.module.scss';
 import Stats from './Stats';
-import classNames from 'classnames';
 
 export default class Card extends Component {
     styleChecker = () => {
-        if (this.props.pokeData.type === "Dark") {
-            console.log("dark")
-            return {backgroundColor: "#FF0000"}
-        } else {
-            console.log("normal")
-            return {}
+        switch(this.props.pokeData.type) {
+            case "Dark":
+                return styles.dark
+            case "Water":
+                return styles.water
+            case "Electric":
+                return styles.electric
+            case "Fire":
+                return styles.fire
+            case "Psychic":
+                return styles.psychic
+            case "Grass":
+                return styles.grass
+            case "Ice":
+                return styles.ice
+            case "Fighting":
+                return styles.fighting
+            case "Dragon":
+                return styles.dragon
+            default:
+                return styles.card
         }
     }
 
     render() {
+        // this.styleChecker()
+        // console.log(this.props.pokeData.type)
         return (
             <div>
-                <figure className={styles.card} style={{backgroundColor: "#FF0000"}}>
+                <figure className={`${styles.card} ${this.styleChecker()}`}>
                     <div className={styles.card__image_container}>
                         <img src={this.props.pokeData.image} className={styles.card__image} />
                     </div>

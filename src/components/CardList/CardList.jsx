@@ -20,7 +20,6 @@ export default class CardList extends Component {
                 this.setState({ pokemon: pokemon,
                                 filteredPoke: pokemon
                              })
-                console.log(pokemon);
             });
     }
 
